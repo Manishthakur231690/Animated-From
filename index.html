@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    *{
+        margin: 0;padding: 0;box-sizing: border-box;transition: 0.3s linear;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to top right, rgb(41, 140, 120), rgb(26, 135, 174));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div{
+        display: flex;
+        align-items: center;
+    }
+    button{
+        color: white;
+        border: none;
+        background-color: transparent;
+        font-size: 45px;
+        margin: 0 30px;
+    }
+    div div{
+        background-color: royalblue;
+        color: aliceblue;
+        border-radius: 10px;
+        box-shadow: 1px 1px 5px 10px rgb(224, 224, 224);
+        padding: 10px 20px;
+        font-size: 25px;
+        font-family: sans-serif;
+    }
+</style>
+<body>
+
+
+        <div>
+                <button onclick="dec()">-</button>
+                    <div id="value">0</div>
+                <button onclick="inc()">+</button>
+        </div>
+
+
+</body>
+<script>
+
+
+    let value = document.getElementById('value');
+    var v = 0;
+    function dec(){
+        v = v - 1;
+        value.innerHTML  = v;
+    }
+
+    function inc(){
+        v = v + 1;
+        value.innerHTML  = v;
+    }
+
+
+</script>
+
+</html>

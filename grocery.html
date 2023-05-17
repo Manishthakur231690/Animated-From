@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Grocery List</title>
+</head>
+<style>
+      *{
+          margin: 0;padding: 0;box-sizing: border-box;
+      }
+      body{ overflow-x: hidden; }
+
+
+      #container{
+          width: 100vw;
+          height: 100vh;
+          display: flex;justify-content: center;align-items: center;
+          padding-top: 20px;
+          background-color: #2d555e;
+      }
+      .content{
+        width: 600px;
+        height: 500px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .content h2{
+          width: 100%;
+          background: linear-gradient(to top left, rgb(10, 167, 164), rgb(25, 104, 188));
+          padding: 5px;
+          color: white;
+          font-size: 27px;
+          border-radius: 5px;
+      }
+      .newItem{
+        font-size: 18px;
+        color: #0d3e5c;
+        margin-top: 10px;
+      }
+      .itemDiv{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 20px;
+        align-items: center;
+      }
+      .removeBtn{
+        height: 28px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+</style>
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top px-5 py-2"class="navbar bg-primary" data-bs-theme="dark">
+        <div style="display: flex;">
+                <h3 style="color: aliceblue;">Grocery Store</h3>
+
+                <button type="button" class="btn btn-dark position-relative" style="margin-left: 25px;">
+                    Total Items
+                    <span id="totalItem" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      0
+                    <span class="visually-hidden">unread messages</span>
+                    </span>
+                </button>
+        </div>
+      </nav>
+
+
+      <div id="container">
+          <div class="content">
+                <h2 style="text-align: center;">Grocery List</h2>
+                <div style="display: flex;margin-top: 15px;">
+                    <input class="form-control" type="text" placeholder="e.g. Apple" id="input" aria-label="default input example">
+                    <button type="button" id="addBtn" class="btn btn-success" style="margin-left: 15px;">Submit</button>
+                </div>
+                <br>
+                <div id="dataItems">
+
+                </div>
+
+                <p  style="text-align: center;margin-top: 5px;"><button type="button" id="clear" class="btn btn-danger">Clear Items</button></p>
+          </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <script>
+                let addBtn = document.getElementById("addBtn");
+                let input = document.getElementById("input");
+                let dataItems = document.getElementById("dataItems");
+                let clear = document.getElementById("clear");
+                let count = 0;
+
+                addBtn.onclick = function(){
+                       if(input.value !== ''){
+                            count = count + 1;
+                            document.getElementById('totalItem').innerHTML = count;
+
+                            const itemDiv = document.createElement('div');
+                            itemDiv.className = 'itemDiv';
+                            itemDiv.id = "itemDIv" + count + "";
+
+                            const item = document.createElement('li');
+                            item.innerHTML = input.value;
+                            item.className = "newItem";
+                            itemDiv.appendChild(item);
+                            dataItems.appendChild(itemDiv);
+
+
+                            const removeBtn = document.createElement('img');
+                            removeBtn.className = 'removeBtn';
+                            removeBtn.src = 'delete.gif';
+                            itemDiv.appendChild(removeBtn);
+
+                            removeBtn.addEventListener('click', function(){
+                                removeItem(itemDiv.id);
+                            });
+
+                            input.value = '';
+                       } 
+                }
+
+
+                function removeItem(id){
+                    let element = document.getElementById("" + id + "");
+                    element.remove();
+                    count = count - 1;
+                    document.getElementById('totalItem').innerHTML = count;
+                }
+
+
+
+                clear.onclick = function(){
+                    count = 0;
+                    dataItems.childNodes = new Array();
+                    dataItems.innerHTML = '';
+                    document.getElementById('totalItem').innerHTML = count;
+                }
+
+
+
+
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
