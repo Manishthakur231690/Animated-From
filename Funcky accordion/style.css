@@ -1,0 +1,97 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.3s linear;
+}
+body{
+    background-color: rgb(62, 72, 82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    width: 380px;
+    height: 500px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+#div1{
+    height: 200px;
+    background-color: rgb(96, 141, 93);
+}
+#div2{
+    height: 100px;
+    background-color: rgb(202, 132, 67);
+}
+#div3{
+    height: 100px;
+    background-color: rgb(212, 151, 113);
+}
+#div4{
+    height: 100px;
+    background-color: rgb(197, 74, 74);
+}
+.div{
+    padding: 37px;
+    overflow: hidden;
+}
+#icon{
+    position: absolute;
+    background-color: rgb(197, 74, 74);
+    color: aliceblue;
+    padding: 20px;
+    font-size: 40px;
+    border-radius: 15px;
+    top: 60px;
+    left: 20px;
+}
+.time{
+    text-align: right;
+}
+
+.time p{
+    font-family: fantasy;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.text{
+    animation-name: movingbox;
+    animation-duration: 1s;
+}
+@keyframes movingbox{
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+     }
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
+}
+.text button{
+    border: 1.5px solid white;
+    background-color: transparent;
+    padding: 7px 10px;
+    font-size: 16px;
+    color: aliceblue;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+h4{
+    line-height: 35px;
+}
+#text1{
+    display: block;
+}
+.text{
+    float: right;
+    margin-top: 15px;
+    display: none;
+}

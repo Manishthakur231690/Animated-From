@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5" class="navbar bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Crud App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search"  style="width: 350px;" placeholder="Search Book" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+<!-- ********************  ADD BOOK  *********************************** -->
+
+      <div id="form_Con">
+            <form action="#">
+            <div style="display: flex;align-items: center;justify-content: space-between;">
+                <p>Books>New</p>
+                <button type="button" class="btn btn-light" style="font-weight: bold;font-size: 25px;" onclick="close_form()">X</button>
+            </div>
+                <div style="display: flex;width: 100%;align-items: center;justify-content: space-between;margin-top: 10px;" >
+                    <h3>New Book</h3>
+                    <div>
+                        <button type="submit" class="btn btn-dark" onclick="add_book()">Save</button>
+                    </div>
+                </div>
+                
+                    <input class="form-control" type="text" placeholder="Title" id="title" required aria-label="default input example">
+                    <input class="form-control" type="text" placeholder="Author" id="author" required aria-label="default input example">
+                    <input class="form-control" type="number" placeholder="Price" id="price" required aria-label="default input example">
+                    <select class="form-select" id="status" aria-label="Default select example">
+                        <option selected>Choose options</option>
+                        <option value="Available">Not available</option>
+                        <option value="Not available">Available</option>
+                    </select>
+
+            </form>
+      </div>
+
+
+<!-- ********************  Edit BOOK  *********************************** -->
+      <div id="form_Con" style="display: none;">
+        <form action="#">
+            <p>Books>Edit</p>
+            <div style="display: flex;width: 100%;align-items: center;justify-content: space-between;" >
+                <h3>Edit Book</h3>
+                <div>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-dark">Save</button>
+                </div>
+            </div>
+            
+                <input class="form-control" type="text" placeholder="Title" id="title" aria-label="default input example">
+                <input class="form-control" type="text" placeholder="Author" id="author" aria-label="default input example">
+                <input class="form-control" type="number" placeholder="Price" id="price" aria-label="default input example">
+                <select class="form-select" id="status" aria-label="Default select example">
+                    <option selected>Choose options</option>
+                    <option value="Available">Not available</option>
+                    <option value="Not available">Available</option>
+                </select>
+
+        </form>
+  </div>
+
+
+
+    <div id="container">
+        <div class="content">
+            <div style="display: flex;width: 100%;align-items: center;justify-content: space-between;" >
+                <h3>Books</h3>
+                <button type="button" class="btn btn-dark" onclick="new_book()">Create New</button>
+            </div>
+            <hr>
+            <div class="headings">
+                <p>Id</p>
+                <p>Title</p>
+                <p>Author</p>
+                <p>Status</p>
+                <p>Price</p>
+                <p>Manage</p>
+            </div>
+            <hr>
+
+            <div id="books_con">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

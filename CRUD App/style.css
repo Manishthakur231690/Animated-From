@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    width: 100vw;
+    background-color: rgb(237, 240, 240);
+    padding: 50px 20px;
+    display: flex;justify-content: center;align-items: center;
+}
+#container .content{
+    width: 75vw;
+    padding: 40px 50px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#container .content .headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#container .content .headings p{
+    font-size: 16px;
+    font-weight: 700;
+    color:  rgb(87, 87, 87);
+    text-transform: uppercase;
+}
+#container .content #books_con p{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+    color:  rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+#form_Con{
+    position: fixed;
+    background-color: rgb(237, 240, 240);
+    display: none;align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 5;
+}
+#form_Con form{
+    width: 600px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 50px 50px 50px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#form_Con form input{
+    margin-top: 15px;
+}
+#form_Con form select{
+    margin-top: 15px;
+}
